@@ -1,38 +1,17 @@
 import { MouseEventHandler } from "react";
 
-// Service type for Logistics
 export interface ServiceProps {
-  id: string;
+  id?: string;
   serviceName: string;
   description: string;
-  icon: string;
-  estimatedDelivery: string;
-  pricePerKg: number;
+  bestFor: string;
   category: "Air Freight" | "Sea Freight" | "Land Freight";
-}
-
-// Legacy Car types kept for reference
-export interface CarProps {
-  city_mpg: number;
-  class: string;
-  combination_mpg: number;
-  cylinders: number;
-  displacement: number;
-  drive: string;
-  fuel_type: string;
-  highway_mpg: number;
-  make: string;
-  model: string;
-  transmission: string;
-  year: number;
+  estimatedDelivery: string;
+  basePrice: number;
+  icon?: string;
 }
 
 export interface FilterProps {
-  manufacturer?: string;
-  year?: number;
-  model?: string;
-  limit?: number;
-  fuel?: string;
   category?: string;
   search?: string;
 }
@@ -43,16 +22,6 @@ export interface HomeProps {
 
 export interface ServiceCardProps {
   service: ServiceProps;
-}
-
-export interface CarCardProps {
-  model: string;
-  make: string;
-  mpg: number;
-  transmission: string;
-  year: number;
-  drive: string;
-  cityMPG: number;
 }
 
 export interface CustomButtonProps {
@@ -75,31 +44,9 @@ export interface CustomFilterProps {
   options: OptionProps[];
 }
 
-export interface ShowMoreProps {
-  pageNumber: number;
-  isNext: boolean;
-}
-
-export interface SearchManuFacturerProps {
-  manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
-}
-
-export interface GetQuoteFormData {
+export interface GetInTouchFormData {
   name: string;
   email: string;
   packageWeight: number;
   destination: string;
-}
-
-export interface FooterLink {
-  title: string;
-  url: string;
-  icon?: string;
-  handleScroll?: boolean;
-}
-
-export interface FooterSection {
-  title: string;
-  links: FooterLink[];
 }
